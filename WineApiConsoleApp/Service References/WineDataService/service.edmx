@@ -1,0 +1,257 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="Wine.OData.Model.Entities" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="Appellation">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="Url" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="Products" Relationship="Wine.OData.Model.Entities.Appellation_Products" FromRole="Appellation" ToRole="Products" />
+      </EntityType>
+      <EntityType Name="FoodType">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="Url" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="Products" Relationship="Wine.OData.Model.Entities.FoodType_Products" FromRole="FoodType" ToRole="Products" />
+      </EntityType>
+      <EntityType Name="ProductAttribute">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" m:FC_TargetPath="SyndicationTitle" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
+        <Property Name="Url" Type="Edm.String" Nullable="true" m:FC_TargetPath="SyndicationSummary" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
+        <NavigationProperty Name="Products" Relationship="Wine.OData.Model.Entities.ProductAttribute_Products" FromRole="ProductAttribute" ToRole="Products" />
+      </EntityType>
+      <EntityType Name="Product" m:HasStream="true">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" m:FC_TargetPath="SyndicationTitle" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
+        <Property Name="Description" Type="Edm.String" Nullable="true" m:FC_TargetPath="SyndicationSummary" m:FC_ContentKind="text" m:FC_KeepInContent="true" />
+        <Property Name="Url" Type="Edm.String" Nullable="true" />
+        <Property Name="PriceMin" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PriceMax" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="PriceRetail" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Type" Type="Edm.String" Nullable="true" />
+        <Property Name="Year" Type="Edm.String" Nullable="true" />
+        <Property Name="Vintage" Type="Edm.String" Nullable="true" />
+        <Property Name="Label" Type="Wine.OData.Model.Entities.Label" Nullable="false" />
+        <Property Name="GeoLocation" Type="Wine.OData.Model.Entities.GeoLocation" Nullable="false" />
+        <NavigationProperty Name="Retails" Relationship="Wine.OData.Model.Entities.Product_Retails" FromRole="Product" ToRole="Retails" />
+        <NavigationProperty Name="Appellation" Relationship="Wine.OData.Model.Entities.Product_Appellation" FromRole="Product" ToRole="Appellation" />
+        <NavigationProperty Name="Region" Relationship="Wine.OData.Model.Entities.Product_Region" FromRole="Product" ToRole="Region" />
+        <NavigationProperty Name="Varietal" Relationship="Wine.OData.Model.Entities.Product_Varietal" FromRole="Product" ToRole="Varietal" />
+        <NavigationProperty Name="WineType" Relationship="Wine.OData.Model.Entities.Product_WineType" FromRole="Product" ToRole="WineType" />
+        <NavigationProperty Name="Vineyard" Relationship="Wine.OData.Model.Entities.Product_Vineyard" FromRole="Product" ToRole="Vineyard" />
+        <NavigationProperty Name="ProductAttributes" Relationship="Wine.OData.Model.Entities.Product_ProductAttributes" FromRole="Product" ToRole="ProductAttributes" />
+      </EntityType>
+      <ComplexType Name="Label">
+        <Property Name="MediumUrl" Type="Edm.String" Nullable="true" />
+        <Property Name="LargeUrl" Type="Edm.String" Nullable="true" />
+      </ComplexType>
+      <ComplexType Name="GeoLocation">
+        <Property Name="Latitude" Type="Edm.String" Nullable="true" />
+        <Property Name="Longitude" Type="Edm.String" Nullable="true" />
+        <Property Name="Url" Type="Edm.String" Nullable="true" />
+      </ComplexType>
+      <EntityType Name="Region">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="Url" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="Products" Relationship="Wine.OData.Model.Entities.Region_Products" FromRole="Region" ToRole="Products" />
+      </EntityType>
+      <EntityType Name="Retail">
+        <Key>
+          <PropertyRef Name="ProductId" />
+          <PropertyRef Name="State" />
+        </Key>
+        <Property Name="ProductId" Type="Edm.String" Nullable="false" />
+        <Property Name="State" Type="Edm.String" Nullable="false" />
+        <Property Name="Sku" Type="Edm.String" Nullable="true" />
+        <Property Name="InStock" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Price" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Url" Type="Edm.String" Nullable="true" />
+      </EntityType>
+      <EntityType Name="Varietal">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="Url" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="Products" Relationship="Wine.OData.Model.Entities.Varietal_Products" FromRole="Varietal" ToRole="Products" />
+      </EntityType>
+      <EntityType Name="Vineyard">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="Url" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="Products" Relationship="Wine.OData.Model.Entities.Vineyard_Products" FromRole="Vineyard" ToRole="Products" />
+      </EntityType>
+      <EntityType Name="WineStyle">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="Url" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="Products" Relationship="Wine.OData.Model.Entities.WineStyle_Products" FromRole="WineStyle" ToRole="Products" />
+      </EntityType>
+      <EntityType Name="WineType">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="true" />
+        <Property Name="Url" Type="Edm.String" Nullable="true" />
+        <NavigationProperty Name="Products" Relationship="Wine.OData.Model.Entities.WineType_Products" FromRole="WineType" ToRole="Products" />
+      </EntityType>
+      <Association Name="Appellation_Products">
+        <End Role="Appellation" Type="Wine.OData.Model.Entities.Appellation" Multiplicity="*" />
+        <End Role="Products" Type="Wine.OData.Model.Entities.Product" Multiplicity="*" />
+      </Association>
+      <Association Name="FoodType_Products">
+        <End Role="FoodType" Type="Wine.OData.Model.Entities.FoodType" Multiplicity="*" />
+        <End Role="Products" Type="Wine.OData.Model.Entities.Product" Multiplicity="*" />
+      </Association>
+      <Association Name="ProductAttribute_Products">
+        <End Role="ProductAttribute" Type="Wine.OData.Model.Entities.ProductAttribute" Multiplicity="*" />
+        <End Role="Products" Type="Wine.OData.Model.Entities.Product" Multiplicity="*" />
+      </Association>
+      <Association Name="Product_Retails">
+        <End Role="Product" Type="Wine.OData.Model.Entities.Product" Multiplicity="*" />
+        <End Role="Retails" Type="Wine.OData.Model.Entities.Retail" Multiplicity="*" />
+      </Association>
+      <Association Name="Product_Appellation">
+        <End Role="Product" Type="Wine.OData.Model.Entities.Product" Multiplicity="*" />
+        <End Role="Appellation" Type="Wine.OData.Model.Entities.Appellation" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Product_Region">
+        <End Role="Product" Type="Wine.OData.Model.Entities.Product" Multiplicity="*" />
+        <End Role="Region" Type="Wine.OData.Model.Entities.Region" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Product_Varietal">
+        <End Role="Product" Type="Wine.OData.Model.Entities.Product" Multiplicity="*" />
+        <End Role="Varietal" Type="Wine.OData.Model.Entities.Varietal" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Product_WineType">
+        <End Role="Product" Type="Wine.OData.Model.Entities.Product" Multiplicity="*" />
+        <End Role="WineType" Type="Wine.OData.Model.Entities.WineType" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Product_Vineyard">
+        <End Role="Product" Type="Wine.OData.Model.Entities.Product" Multiplicity="*" />
+        <End Role="Vineyard" Type="Wine.OData.Model.Entities.Vineyard" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Product_ProductAttributes">
+        <End Role="Product" Type="Wine.OData.Model.Entities.Product" Multiplicity="*" />
+        <End Role="ProductAttributes" Type="Wine.OData.Model.Entities.ProductAttribute" Multiplicity="*" />
+      </Association>
+      <Association Name="Region_Products">
+        <End Role="Region" Type="Wine.OData.Model.Entities.Region" Multiplicity="*" />
+        <End Role="Products" Type="Wine.OData.Model.Entities.Product" Multiplicity="*" />
+      </Association>
+      <Association Name="Varietal_Products">
+        <End Role="Varietal" Type="Wine.OData.Model.Entities.Varietal" Multiplicity="*" />
+        <End Role="Products" Type="Wine.OData.Model.Entities.Product" Multiplicity="*" />
+      </Association>
+      <Association Name="Vineyard_Products">
+        <End Role="Vineyard" Type="Wine.OData.Model.Entities.Vineyard" Multiplicity="*" />
+        <End Role="Products" Type="Wine.OData.Model.Entities.Product" Multiplicity="*" />
+      </Association>
+      <Association Name="WineStyle_Products">
+        <End Role="WineStyle" Type="Wine.OData.Model.Entities.WineStyle" Multiplicity="*" />
+        <End Role="Products" Type="Wine.OData.Model.Entities.Product" Multiplicity="*" />
+      </Association>
+      <Association Name="WineType_Products">
+        <End Role="WineType" Type="Wine.OData.Model.Entities.WineType" Multiplicity="*" />
+        <End Role="Products" Type="Wine.OData.Model.Entities.Product" Multiplicity="*" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Wine.OData.Model" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityContainer Name="WineData" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Appellations" EntityType="Wine.OData.Model.Entities.Appellation" />
+        <EntitySet Name="FoodTypes" EntityType="Wine.OData.Model.Entities.FoodType" />
+        <EntitySet Name="ProductAttributes" EntityType="Wine.OData.Model.Entities.ProductAttribute" />
+        <EntitySet Name="Products" EntityType="Wine.OData.Model.Entities.Product" />
+        <EntitySet Name="Regions" EntityType="Wine.OData.Model.Entities.Region" />
+        <EntitySet Name="Retails" EntityType="Wine.OData.Model.Entities.Retail" />
+        <EntitySet Name="Varietals" EntityType="Wine.OData.Model.Entities.Varietal" />
+        <EntitySet Name="Vineyards" EntityType="Wine.OData.Model.Entities.Vineyard" />
+        <EntitySet Name="WineStyles" EntityType="Wine.OData.Model.Entities.WineStyle" />
+        <EntitySet Name="WineTypes" EntityType="Wine.OData.Model.Entities.WineType" />
+        <AssociationSet Name="Appellation_Products" Association="Wine.OData.Model.Entities.Appellation_Products">
+          <End Role="Appellation" EntitySet="Appellations" />
+          <End Role="Products" EntitySet="Products" />
+        </AssociationSet>
+        <AssociationSet Name="FoodType_Products" Association="Wine.OData.Model.Entities.FoodType_Products">
+          <End Role="FoodType" EntitySet="FoodTypes" />
+          <End Role="Products" EntitySet="Products" />
+        </AssociationSet>
+        <AssociationSet Name="ProductAttribute_Products" Association="Wine.OData.Model.Entities.ProductAttribute_Products">
+          <End Role="ProductAttribute" EntitySet="ProductAttributes" />
+          <End Role="Products" EntitySet="Products" />
+        </AssociationSet>
+        <AssociationSet Name="Product_Retails" Association="Wine.OData.Model.Entities.Product_Retails">
+          <End Role="Product" EntitySet="Products" />
+          <End Role="Retails" EntitySet="Retails" />
+        </AssociationSet>
+        <AssociationSet Name="Product_Appellation" Association="Wine.OData.Model.Entities.Product_Appellation">
+          <End Role="Product" EntitySet="Products" />
+          <End Role="Appellation" EntitySet="Appellations" />
+        </AssociationSet>
+        <AssociationSet Name="Product_Region" Association="Wine.OData.Model.Entities.Product_Region">
+          <End Role="Product" EntitySet="Products" />
+          <End Role="Region" EntitySet="Regions" />
+        </AssociationSet>
+        <AssociationSet Name="Product_Varietal" Association="Wine.OData.Model.Entities.Product_Varietal">
+          <End Role="Product" EntitySet="Products" />
+          <End Role="Varietal" EntitySet="Varietals" />
+        </AssociationSet>
+        <AssociationSet Name="Product_WineType" Association="Wine.OData.Model.Entities.Product_WineType">
+          <End Role="Product" EntitySet="Products" />
+          <End Role="WineType" EntitySet="WineTypes" />
+        </AssociationSet>
+        <AssociationSet Name="Product_Vineyard" Association="Wine.OData.Model.Entities.Product_Vineyard">
+          <End Role="Product" EntitySet="Products" />
+          <End Role="Vineyard" EntitySet="Vineyards" />
+        </AssociationSet>
+        <AssociationSet Name="Product_ProductAttributes" Association="Wine.OData.Model.Entities.Product_ProductAttributes">
+          <End Role="Product" EntitySet="Products" />
+          <End Role="ProductAttributes" EntitySet="ProductAttributes" />
+        </AssociationSet>
+        <AssociationSet Name="Region_Products" Association="Wine.OData.Model.Entities.Region_Products">
+          <End Role="Region" EntitySet="Regions" />
+          <End Role="Products" EntitySet="Products" />
+        </AssociationSet>
+        <AssociationSet Name="Varietal_Products" Association="Wine.OData.Model.Entities.Varietal_Products">
+          <End Role="Varietal" EntitySet="Varietals" />
+          <End Role="Products" EntitySet="Products" />
+        </AssociationSet>
+        <AssociationSet Name="Vineyard_Products" Association="Wine.OData.Model.Entities.Vineyard_Products">
+          <End Role="Vineyard" EntitySet="Vineyards" />
+          <End Role="Products" EntitySet="Products" />
+        </AssociationSet>
+        <AssociationSet Name="WineStyle_Products" Association="Wine.OData.Model.Entities.WineStyle_Products">
+          <End Role="WineStyle" EntitySet="WineStyles" />
+          <End Role="Products" EntitySet="Products" />
+        </AssociationSet>
+        <AssociationSet Name="WineType_Products" Association="Wine.OData.Model.Entities.WineType_Products">
+          <End Role="WineType" EntitySet="WineTypes" />
+          <End Role="Products" EntitySet="Products" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
