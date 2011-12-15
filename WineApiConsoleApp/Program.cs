@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * This project is an early experiment with the OData service at http://wine.cloudapp.net.
+ * I have now changed tack and I am using the RESTful API instead. See the other projects
+ * in this solution.
+ */
+
+using System;
 using System.Linq;
 using System.Data.Services.Client;
 using WineApiConsoleApp.WineDataService;
@@ -34,7 +40,7 @@ namespace WineApiConsoleApp
 {
     internal class Program
     {
-        private static string API_KEY = "...";
+        private static string API_KEY = "2fd879a5765785c043cc992b550d2bda";
 
         private static void Main(string[] args)
         {
@@ -94,6 +100,19 @@ namespace WineApiConsoleApp
                     Console.WriteLine((productLinqQuery as DataServiceQuery<Product>).RequestUri.ToString());
                 }
                 foreach (var product in productLinqQuery) {
+                    Console.WriteLine("Id: {0}; Name: {1}; Url: {2}", product.Id, product.Name, product.Url);
+                }
+
+                Console.WriteLine();
+                var productLinqQuery2 =
+                    from p in wineData.Products
+                    where p.Name.Contains("Shiraz")
+                    select p;
+                if (productLinqQuery2 is DataServiceQuery<Product>) {
+                    productLinqQuery2 = (productLinqQuery2 as DataServiceQuery<Product>).AddQueryOption("apikey", API_KEY);
+                    Console.WriteLine((productLinqQuery2 as DataServiceQuery<Product>).RequestUri.ToString());
+                }
+                foreach (var product in productLinqQuery2) {
                     Console.WriteLine("Id: {0}; Name: {1}; Url: {2}", product.Id, product.Name, product.Url);
                 }
             }

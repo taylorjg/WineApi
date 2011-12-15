@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application
+    x:Class="WineDemo.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    StartupUri="MainWindow.xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:WineDemo.ViewModel"
+    xmlns:b="clr-namespace:WineDemo.Behaviours"
+    mc:Ignorable="d"
+    >
+    
+  <Application.Resources>
+    <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" />
+
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Width" Value="50" />
+        </Style>
+
+        <Style x:Key="ListBoxBorderStyle" TargetType="{x:Type Border}">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Background" Value="LightYellow" />
+            <Setter Property="BorderBrush" Value="SteelBlue" />
+            <Setter Property="BorderThickness" Value="4" />
+            <Setter Property="CornerRadius" Value="15" />
+        </Style>
+      
+        <Style x:Key="SelectionListBoxItemStyle" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="b:ListBoxItemBehaviour.IsBroughtIntoViewWhenSelected" Value="True" />
+        </Style>
+
+        <Style x:Key="SelectionListBoxStyle" TargetType="{x:Type ListBox}">
+            <Setter Property="VirtualizingStackPanel.IsVirtualizing" Value="False" />
+            <Setter Property="ItemContainerStyle" Value="{StaticResource SelectionListBoxItemStyle}" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+
+    </Application.Resources>
+    
+</Application>

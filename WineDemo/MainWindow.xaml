@@ -1,0 +1,143 @@
+﻿<Window
+    x:Class="WineDemo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    DataContext="{Binding Source={StaticResource Locator}, Path=MainWindowViewModel}"
+    Title="MainWindow"
+    Width="1024"
+    Height="768"
+    >
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Bottom">
+                <Button Content="Search" Margin="5" HorizontalAlignment="Left" Command="{Binding Path=SearchCommand}" />
+                <Button Content="Clear" Margin="5" HorizontalAlignment="Left" Command="{Binding Path=ClearCommand}" />
+            </StackPanel>
+
+            <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource ListBoxBorderStyle}">
+                <ListBox
+                    ItemsSource="{Binding Path=Products}"
+                    VirtualizingStackPanel.IsVirtualizing="True"
+                    VirtualizingStackPanel.VirtualizationMode="Recycling"
+                    ScrollViewer.IsDeferredScrollingEnabled="True"
+                    Margin="5"
+                    >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="5" Background="LightYellow" BorderBrush="SteelBlue" BorderThickness="4" CornerRadius="15">
+                                <Grid Margin="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Margin="10" Grid.Column="0" Source="{Binding Path=Labels[0].Url, Mode=OneWay}" Width="100" Height="100" />
+                                    <Grid Grid.Column="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Name: " />
+                                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=Name, Mode=OneWay}" />
+                                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Vintage: " />
+                                        <!--<TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Vintages[0].Name, Mode=OneWay}" />-->
+                                        <TextBlock Grid.Row="1" Grid.Column="1" Text="???" />
+                                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Minimum price: " />
+                                        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=PriceMin, StringFormat=\{0:c\}, Mode=OneWay}" />
+                                        <TextBlock Grid.Row="3" Grid.Column="0" Text="Maximum price: " />
+                                        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=PriceMax, StringFormat=\{0:c\}, Mode=OneWay}" />
+                                        <TextBlock Grid.Row="4" Grid.Column="0" Text="Retail price: " />
+                                        <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Path=PriceRetail, StringFormat=\{0:c\}, Mode=OneWay}" />
+                                        <TextBlock Grid.Row="5" Grid.Column="0" Text="Url: " />
+                                        <TextBlock Grid.Row="5" Grid.Column="1">
+                                            <Hyperlink NavigateUri="{Binding Path=Url, Mode=OneWay}">
+                                                <TextBlock Text="{Binding Path=Url, Mode=OneWay}" />
+                                            </Hyperlink>
+                                        </TextBlock>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Border>
+            
+            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Vertical" VerticalAlignment="Bottom">
+                <TextBlock Margin="5" HorizontalAlignment="Left" Text="{Binding Path=Total}" />
+                <ComboBox
+                    Margin="5"
+                    HorizontalAlignment="Left"
+                    SelectedValue="{Binding Path=SelectedSearchSortOption}"
+                    ItemsSource="{Binding Path=SearchSortOptions}"
+                    DisplayMemberPath="Name"
+                    />
+            </StackPanel>
+
+        </Grid>
+        
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource ListBoxBorderStyle}">
+                <ListBox
+                    Style="{StaticResource SelectionListBoxStyle}"
+                    ItemsSource="{Binding Path=WineTypes}"
+                    SelectedItem="{Binding Path=SelectedWineType}"
+                    DisplayMemberPath="Name"
+                    />
+            </Border>
+
+            <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource ListBoxBorderStyle}">
+                <ListBox
+                    Style="{StaticResource SelectionListBoxStyle}"
+                    ItemsSource="{Binding Path=Varietals}"
+                    SelectedItem="{Binding Path=SelectedVarietal}"
+                    DisplayMemberPath="Name"
+                    />
+            </Border>
+
+            <Border Grid.Row="0" Grid.Column="2" Style="{StaticResource ListBoxBorderStyle}">
+                <ListBox
+                    Style="{StaticResource SelectionListBoxStyle}"
+                    ItemsSource="{Binding Path=Regions}"
+                    SelectedItem="{Binding Path=SelectedRegion}"
+                    DisplayMemberPath="Name"
+                    />
+            </Border>
+
+            <Border Grid.Row="0" Grid.Column="3" Style="{StaticResource ListBoxBorderStyle}">
+                <ListBox
+                    Style="{StaticResource SelectionListBoxStyle}"
+                    ItemsSource="{Binding Path=Appellations}"
+                    SelectedItem="{Binding Path=SelectedAppellation}"
+                    DisplayMemberPath="Name"
+                    />
+            </Border>
+        </Grid>
+    </Grid>
+    
+</Window>
