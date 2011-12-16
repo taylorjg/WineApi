@@ -16,7 +16,7 @@ namespace WineApiExample
     {
         static void Main(string[] args)
         {
-            Config.ApiKey = "00000000000000000000000000000000";
+            Config.ApiKey = "<your api key here>";
 
             CatalogService catalogService = new CatalogService();
 
