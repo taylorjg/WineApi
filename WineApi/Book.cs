@@ -13,7 +13,6 @@ namespace WineApi
         /// </summary>
         public string Id { get; set; }
 
-
         ///// <summary>
         ///// Descriptive name for the book.
         ///// </summary>
