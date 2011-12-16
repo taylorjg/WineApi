@@ -77,7 +77,7 @@ namespace WineApiTests
             Catalog catalog = catalogService
                 .State("CA")
                 .Search("Merlot")
-                .SortBy(CatalogService.SortOptions.Price, CatalogService.SortDirection.Ascending)
+                .SortBy(SortOptions.Price, SortDirection.Ascending)
                 .Execute();
 
             Assert.That(catalog, Is.Not.Null);
@@ -93,7 +93,7 @@ namespace WineApiTests
             Catalog catalog = catalogService
                 .State("CA")
                 .Search("Merlot")
-                .SortBy(CatalogService.SortOptions.Price, CatalogService.SortDirection.Descending)
+                .SortBy(SortOptions.Price, SortDirection.Descending)
                 .Execute();
 
             Assert.That(catalog, Is.Not.Null);
@@ -112,7 +112,7 @@ namespace WineApiTests
             Catalog catalog = catalogService
                 .State("CA")
                 .PriceFilter(minPrice, maxPrice)
-                .SortBy(CatalogService.SortOptions.Price, CatalogService.SortDirection.Descending)
+                .SortBy(SortOptions.Price, SortDirection.Descending)
                 .InStock()
                 .Offset(10)
                 .Size(5)
@@ -144,8 +144,8 @@ namespace WineApiTests
                 .PriceFilter(minPrice, maxPrice)
                 .CategoriesFilter(124, 7155)
                 .RatingFilter(minRating, maxRating)
-                .SortBy(CatalogService.SortOptions.Price, CatalogService.SortDirection.Descending)
-                .SortBy(CatalogService.SortOptions.Rating, CatalogService.SortDirection.Descending)
+                .SortBy(SortOptions.Price, SortDirection.Descending)
+                .SortBy(SortOptions.Rating, SortDirection.Descending)
                 .Execute();
 
             Assert.That(catalog, Is.Not.Null);

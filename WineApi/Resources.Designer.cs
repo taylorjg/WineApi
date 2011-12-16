@@ -90,9 +90,9 @@ namespace WineApi {
         /// <summary>
         ///   Looks up a localized string similar to Unable to Authorize. We cannot authorize this account..
         /// </summary>
-        internal static string ReturnCodeUnableToAuth {
+        internal static string ReturnCodeUnableToAuthorize {
             get {
-                return ResourceManager.GetString("ReturnCodeUnableToAuth", resourceCulture);
+                return ResourceManager.GetString("ReturnCodeUnableToAuthorize", resourceCulture);
             }
         }
         

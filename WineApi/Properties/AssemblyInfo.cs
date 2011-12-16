@@ -6,11 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("WineApi")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("RESTful implementation of wine.com API.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Ascribe PLC")]
 [assembly: AssemblyProduct("WineApi")]
-[assembly: AssemblyCopyright("Copyright © Ascribe PLC 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

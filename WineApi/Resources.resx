@@ -126,7 +126,7 @@
   <data name="ReturnCodeSuccess" xml:space="preserve">
     <value>Everything worked, no problems.</value>
   </data>
-  <data name="ReturnCodeUnableToAuth" xml:space="preserve">
+  <data name="ReturnCodeUnableToAuthorize" xml:space="preserve">
     <value>Unable to Authorize. We cannot authorize this account.</value>
   </data>
   <data name="WineApiServiceExceptionMessage" xml:space="preserve">

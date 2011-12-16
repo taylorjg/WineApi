@@ -83,8 +83,8 @@ namespace WineDemo.ViewModel
         public class SearchSortOption
         {
             public string Name { get; set; }
-            public CatalogService.SortOptions SortOption { get; set; }
-            public CatalogService.SortDirection SortDirection { get; set; }
+            public SortOptions SortOption { get; set; }
+            public SortDirection SortDirection { get; set; }
         }
 
         private IEnumerable<SearchSortOption> _searchSortOptions = null;
@@ -480,17 +480,17 @@ namespace WineDemo.ViewModel
         private void PopulateSearchSortOptions()
         {
             _searchSortOptions = new SearchSortOption[] {
-                new SearchSortOption() { Name = "Most Popular", SortOption = CatalogService.SortOptions.Popularity, SortDirection = CatalogService.SortDirection.Descending },
-                new SearchSortOption() { Name = "Top Rated", SortOption = CatalogService.SortOptions.Rating, SortDirection = CatalogService.SortDirection.Descending },
-                new SearchSortOption() { Name = "Price: Low to High", SortOption = CatalogService.SortOptions.Price, SortDirection = CatalogService.SortDirection.Ascending },
-                new SearchSortOption() { Name = "Price: High to Low", SortOption = CatalogService.SortOptions.Price, SortDirection = CatalogService.SortDirection.Descending },
-                new SearchSortOption() { Name = "Savings", SortOption = CatalogService.SortOptions.Saving, SortDirection = CatalogService.SortDirection.Descending },
-                new SearchSortOption() { Name = "Just In", SortOption = CatalogService.SortOptions.JustIn, SortDirection = CatalogService.SortDirection.Descending },
-                new SearchSortOption() { Name = "Name", SortOption = CatalogService.SortOptions.Name, SortDirection = CatalogService.SortDirection.Ascending },
-                new SearchSortOption() { Name = "Winery: A to Z", SortOption = CatalogService.SortOptions.Winery, SortDirection = CatalogService.SortDirection.Ascending },
-                new SearchSortOption() { Name = "Winery: Z to A", SortOption = CatalogService.SortOptions.Winery, SortDirection = CatalogService.SortDirection.Descending },
-                new SearchSortOption() { Name = "Vintage: Old to New", SortOption = CatalogService.SortOptions.Vintage, SortDirection = CatalogService.SortDirection.Ascending },
-                new SearchSortOption() { Name = "Vintage: New to Old", SortOption = CatalogService.SortOptions.Vintage, SortDirection = CatalogService.SortDirection.Descending }
+                new SearchSortOption() { Name = "Most Popular", SortOption = SortOptions.Popularity, SortDirection = SortDirection.Descending },
+                new SearchSortOption() { Name = "Top Rated", SortOption = SortOptions.Rating, SortDirection = SortDirection.Descending },
+                new SearchSortOption() { Name = "Price: Low to High", SortOption = SortOptions.Price, SortDirection = SortDirection.Ascending },
+                new SearchSortOption() { Name = "Price: High to Low", SortOption = SortOptions.Price, SortDirection = SortDirection.Descending },
+                new SearchSortOption() { Name = "Savings", SortOption = SortOptions.Saving, SortDirection = SortDirection.Descending },
+                new SearchSortOption() { Name = "Just In", SortOption = SortOptions.JustIn, SortDirection = SortDirection.Descending },
+                new SearchSortOption() { Name = "Name", SortOption = SortOptions.Name, SortDirection = SortDirection.Ascending },
+                new SearchSortOption() { Name = "Winery: A to Z", SortOption = SortOptions.Winery, SortDirection = SortDirection.Ascending },
+                new SearchSortOption() { Name = "Winery: Z to A", SortOption = SortOptions.Winery, SortDirection = SortDirection.Descending },
+                new SearchSortOption() { Name = "Vintage: Old to New", SortOption = SortOptions.Vintage, SortDirection = SortDirection.Ascending },
+                new SearchSortOption() { Name = "Vintage: New to Old", SortOption = SortOptions.Vintage, SortDirection = SortDirection.Descending }
             };
 
             SelectedSearchSortOption = _searchSortOptions.First();
