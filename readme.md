@@ -26,7 +26,7 @@ namespace WineApiExample
                     .InStock(true)
                     .Search("Merlot")
                     .RatingFilter(90, 96)
-                    .SortBy(CatalogService.SortOptions.Rating, CatalogService.SortDirection.Descending)
+                    .SortBy(SortOptions.Rating, SortDirection.Descending)
                     .Execute();
                 Console.WriteLine("Number of products found: {0}", catalog.Products.Total);
             }
@@ -55,7 +55,7 @@ in great detail. I incorporated this technique into WineDemo and it works well.
 - http://bea.stollnitz.com/files/52/DataVirtualizationVincent.zip
 - http://bea.stollnitz.com/blog/?p=344
 
-### (Wine.com OData References)
+## (Wine.com OData References)
 
 - http://wine.cloudapp.net
 - http://www.odata.org/
