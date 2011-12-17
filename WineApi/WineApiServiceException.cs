@@ -22,7 +22,7 @@ namespace WineApi
         {
             return string.Format(
                 Resources.WineApiServiceExceptionMessage,
-                resource);
+                resource ?? string.Empty);
         }
     }
 }

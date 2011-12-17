@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>$version$</version>
+    <version>1.0.2</version>
     <authors>Jonathan Taylor</authors>
     <owners>Jonathan Taylor</owners>
     <projectUrl>https://github.com/taylorjg/WineApi</projectUrl>

@@ -3,7 +3,7 @@
 namespace WineApi
 {
     /// <summary>
-    ///  A varietal.
+    /// A varietal.
     /// </summary>
     public class Varietal
     {

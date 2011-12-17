@@ -3,7 +3,7 @@
 namespace WineApi
 {
     /// <summary>
-    /// A review of a product.
+    /// A community review of a product.
     /// </summary>
     public class CommunityReview
     {

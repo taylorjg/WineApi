@@ -3,7 +3,7 @@
 namespace WineApi
 {
     /// <summary>
-    /// Use this class to configure WineApi.
+    /// Use this (singleton) class to configure WineApi.
     /// </summary>
     public static class Config
     {

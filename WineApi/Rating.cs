@@ -3,7 +3,7 @@
 namespace WineApi
 {
     /// <summary>
-    /// A rating.
+    /// A product rating.
     /// </summary>
     public class Rating
     {
