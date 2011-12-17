@@ -2,6 +2,9 @@
 
 namespace WineApi
 {
+    /// <summary>
+    /// A footnote.
+    /// </summary>
     public class Footnote
     {
         /// <summary>

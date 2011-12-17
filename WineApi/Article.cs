@@ -2,6 +2,9 @@
 
 namespace WineApi
 {
+    /// <summary>
+    /// An article.
+    /// </summary>
     public class Article
     {
         /// <summary>

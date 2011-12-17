@@ -2,6 +2,9 @@
 
 namespace WineApi
 {
+    /// <summary>
+    /// A category.
+    /// </summary>
     public class Category
     {
         /// <summary>

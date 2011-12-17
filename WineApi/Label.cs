@@ -2,6 +2,9 @@
 
 namespace WineApi
 {
+    /// <summary>
+    /// A label for a product.
+    /// </summary>
     public class Label
     {
         /// <summary>

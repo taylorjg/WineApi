@@ -2,6 +2,9 @@
 
 namespace WineApi
 {
+    /// <summary>
+    /// An appellation.
+    /// </summary>
     public class Appellation
     {
         /// <summary>

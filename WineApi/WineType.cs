@@ -2,6 +2,9 @@
 
 namespace WineApi
 {
+    /// <summary>
+    ///  A wine type.
+    /// </summary>
     public class WineType
     {
         /// <summary>

@@ -2,6 +2,9 @@
 
 namespace WineApi
 {
+    /// <summary>
+    /// A vineyard.
+    /// </summary>
     public class Vineyard
     {
         /// <summary>

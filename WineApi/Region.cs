@@ -2,6 +2,9 @@
 
 namespace WineApi
 {
+    /// <summary>
+    /// A region.
+    /// </summary>
     public class Region
     {
         /// <summary>

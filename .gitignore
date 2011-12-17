@@ -1,4 +1,5 @@
 *.suo
+*.nupkg
 obj
 bin
 Notes

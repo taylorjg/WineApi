@@ -2,6 +2,9 @@
 
 namespace WineApi
 {
+    /// <summary>
+    /// A rating.
+    /// </summary>
     public class Rating
     {
         /// <summary>

@@ -19,7 +19,6 @@ namespace WineApiTests
             }
             catch (WineApiStatusException ex) {
                 Assert.That(ex.Status.ReturnCode, Is.EqualTo(ReturnCode.UnableToAuthorize));
-                Assert.That(ex.ReturnCode, Is.EqualTo(ReturnCode.UnableToAuthorize));
             }
         }
 
@@ -36,7 +35,6 @@ namespace WineApiTests
             }
             catch (WineApiStatusException ex) {
                 Assert.That(ex.Status.ReturnCode, Is.EqualTo(ReturnCode.UnableToAuthorize));
-                Assert.That(ex.ReturnCode, Is.EqualTo(ReturnCode.UnableToAuthorize));
             }
         }
 
@@ -53,7 +51,6 @@ namespace WineApiTests
             }
             catch (WineApiStatusException ex) {
                 Assert.That(ex.Status.ReturnCode, Is.EqualTo(ReturnCode.UnableToAuthorize));
-                Assert.That(ex.ReturnCode, Is.EqualTo(ReturnCode.UnableToAuthorize));
             }
         }
 
@@ -70,7 +67,6 @@ namespace WineApiTests
             }
             catch (WineApiStatusException ex) {
                 Assert.That(ex.Status.ReturnCode, Is.EqualTo(ReturnCode.NoAccess));
-                Assert.That(ex.ReturnCode, Is.EqualTo(ReturnCode.NoAccess));
             }
         }
 
