@@ -34,6 +34,15 @@ namespace WineApi
         /// </summary>
         public static string Version { get; set; }
 
+        /// <summary>
+        /// After signing up with LinkShare, use the "affiliateId" parameter
+        /// to pass your affiliate code to the API. All links will be updated
+        /// to track the sales you drive and you will receive a monthly check
+        /// from LinkShare! When you sign up with LinkShare you will see the
+        /// specifics of payments.
+        /// </summary>
+        public static string AffiliateId { get; set; }
+
         internal static string GetBaseUrl(string resource)
         {
             string baseUrl = string.Format(
@@ -44,6 +53,10 @@ namespace WineApi
                 FORMAT_JSON,
                 resource ?? string.Empty,
                 ApiKey ?? string.Empty);
+
+            if (!string.IsNullOrEmpty(AffiliateId)) {
+                baseUrl += string.Format("&affiliateId={0}", AffiliateId);
+            }
 
             return baseUrl;
         }
