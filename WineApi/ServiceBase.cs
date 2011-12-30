@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Net;
-using System.IO;
-using System.Text;
 using Newtonsoft.Json;
 
 namespace WineApi
@@ -22,6 +19,7 @@ namespace WineApi
         {
             _resource = resource;
             _url = Config.GetBaseUrl(_resource);
+            UrlInvoker = new DefaultUrlInvoker();
         }
 
         /// <summary>
@@ -42,16 +40,11 @@ namespace WineApi
         /// <returns>The deserialised object graph.</returns>
         protected T Execute<T>() where T : class
         {
-            T result = null;
+            T result = default(T);
 
             try {
-                HttpWebRequest httpWebRequest = HttpWebRequest.Create(_url) as HttpWebRequest;
-                HttpWebResponse httpWebResponse = httpWebRequest.GetResponse() as HttpWebResponse;
-
-                using (var streamReader = new StreamReader(httpWebResponse.GetResponseStream(), Encoding.UTF8)) {
-                    string jsonText = streamReader.ReadToEnd();
-                    result = JsonConvert.DeserializeObject<T>(jsonText);
-                }
+                string jsonText = UrlInvoker.InvokeUrl(_url);
+                result = JsonConvert.DeserializeObject<T>(jsonText);
             }
             catch (Exception ex) {
                 throw new WineApiServiceException(_resource, ex);
@@ -71,5 +64,11 @@ namespace WineApi
                 throw new WineApiStatusException(status);
             }
         }
+
+        /// <summary>
+        /// Property Injection - allows unit tests to supply a mock object to
+        /// override the default (an instance of DefaultUrlInvoker).
+        /// </summary>
+        internal IUrlInvoker UrlInvoker { get; set; }
     }
 }

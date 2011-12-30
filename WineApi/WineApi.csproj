@@ -59,6 +59,8 @@
     <Compile Include="CommunityReview.cs" />
     <Compile Include="CommunityReviews.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="DefaultUrlInvoker.cs" />
+    <Compile Include="IUrlInvoker.cs" />
     <Compile Include="SortDirection.cs" />
     <Compile Include="SortOptions.cs" />
     <Compile Include="Footnote.cs" />

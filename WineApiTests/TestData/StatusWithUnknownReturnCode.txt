@@ -1,0 +1,7 @@
+{
+	"Status" : {
+		"Messages" : ["Message1", "Message2"],
+		"ReturnCode" : 123
+	},
+	"Categories" : []
+}

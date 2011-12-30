@@ -40,6 +40,9 @@
     <Reference Include="pnunit.framework, Version=1.0.4109.34242, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.2.5.10.11092\lib\pnunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\packages\RhinoMocks.3.6\lib\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,21 +52,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GeneralServiceTests.cs" />
-    <Compile Include="WineApiTestsConstants.cs" />
-    <Compile Include="CatalogServiceTests.cs" />
     <Compile Include="CategoryMapServiceTests.cs" />
+    <Compile Include="GeneralServiceIntegrationTests.cs" />
+    <Compile Include="GeneralServiceTests.cs" />
+    <Compile Include="TestData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestData.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+    <Compile Include="WineApiTestsConstants.cs" />
+    <Compile Include="CatalogServiceIntegrationTests.cs" />
+    <Compile Include="CategoryMapServiceIntegrationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReferenceServiceTests.cs" />
+    <Compile Include="ReferenceServiceIntegrationTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="TestData\StatusWithUnknownReturnCode.txt" />
+    <Content Include="TestData\BadJson.txt" />
     <None Include="packages.config" />
+    <Content Include="TestData\StatusWithReturnCode200And2Messages.txt" />
+    <Content Include="TestData\WineTypes.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WineApi\WineApi.csproj">
       <Project>{C2456682-CD75-441D-91ED-569891C128A5}</Project>
       <Name>WineApi</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestData.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TestData.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

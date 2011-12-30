@@ -1,0 +1,53 @@
+{
+	"Status" : {
+		"Messages" : [],
+		"ReturnCode" : 0
+	},
+	"Categories" : [{
+			"Id" : 4,
+			"Name" : "Wine Type",
+			"Refinements" : [{
+					"Id" : 124,
+					"Name" : "Red Wine",
+					"Url" : ""
+				}, {
+					"Id" : 125,
+					"Name" : "White Wine",
+					"Url" : ""
+				}, {
+					"Id" : 126,
+					"Name" : "Rosé Wine",
+					"Url" : ""
+				}, {
+					"Id" : 123,
+					"Name" : "Champagne & Sparkling",
+					"Url" : ""
+				}, {
+					"Id" : 134,
+					"Name" : "Saké",
+					"Url" : ""
+				}, {
+					"Id" : 128,
+					"Name" : "Dessert, Sherry & Port",
+					"Url" : ""
+				}, {
+					"Id" : 131,
+					"Name" : "Wine Gift Sets",
+					"Url" : ""
+				}, {
+					"Id" : 133,
+					"Name" : "Monthly Wine Clubs",
+					"Url" : ""
+				}, {
+					"Id" : 10090,
+					"Name" : "Wine Glassware",
+					"Url" : ""
+				}, {
+					"Id" : 129,
+					"Name" : "Wine Accessories",
+					"Url" : ""
+				}
+			]
+		}
+	]
+}

@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace WineApiTests
 {
     [TestFixture]
-    internal class ReferenceServiceTests
+    internal class ReferenceServiceIntegrationTests
     {
         [TestFixtureSetUp]
         public void TestFixtureSetUp()
