@@ -6,7 +6,7 @@
     <authors>Jonathan Taylor</authors>
     <owners>Jonathan Taylor</owners>
     <projectUrl>http://github.com/taylorjg/WineApi</projectUrl>
-    <iconUrl>http://cache.wine.com/images/logos/80x80_winecom_logo.png</iconUrl>
+    <iconUrl>http://www.wine.com/images/logos/80x80_winecom_logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <tags>web api client http rest services wrapper json</tags>
