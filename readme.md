@@ -16,11 +16,9 @@ namespace WineApiExample
     {
         static void Main(string[] args)
         {
-            Config.ApiKey = "<your api key here>";
-
-            CatalogService catalogService = new CatalogService();
-
             try {
+                Config.ApiKey = "<your api key here>";
+                CatalogService catalogService = new CatalogService();
                 Catalog catalog = catalogService
                     .State("CA")
                     .InStock(true)
@@ -30,8 +28,11 @@ namespace WineApiExample
                     .Execute();
                 Console.WriteLine("Number of products found: {0}", catalog.Products.Total);
             }
-            catch (WineApiStatusException ex) {
-                Console.Error.WriteLine(ex.Status.Messages[0]);
+            catch (WineApiException ex) {
+                Console.Error.WriteLine(ex.Message);
+                if (ex.InnerException != null) {
+                    Console.Error.WriteLine(ex.InnerException.Message);
+                }
             }
         }
     }
