@@ -121,6 +121,12 @@
   <data name="BadJson" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>testdata\badjson.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="MerlotNapaValleyProducts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>testdata\merlotnapavalleyproducts.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="MerlotReferences" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>testdata\merlotreferences.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="StatusWithReturnCode200And2Messages" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>testdata\statuswithreturncode200and2messages.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>

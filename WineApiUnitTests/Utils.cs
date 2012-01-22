@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WineApiTests
+namespace WineApiUnitTests
 {
     internal class Utils
     {

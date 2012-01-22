@@ -2,12 +2,11 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <authors>Jonathan Taylor</authors>
     <owners>Jonathan Taylor</owners>
-    <projectUrl>https://github.com/taylorjg/WineApi</projectUrl>
-    <!-- It would be nice to use this icon but I'll need to get permission from wine.com first -->
-    <!--<iconUrl>http://cache.wine.com/images/logos/80x80_winecom_logo.png</iconUrl>-->
+    <projectUrl>http://github.com/taylorjg/WineApi</projectUrl>
+    <iconUrl>http://cache.wine.com/images/logos/80x80_winecom_logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <tags>web api client http rest services wrapper json</tags>

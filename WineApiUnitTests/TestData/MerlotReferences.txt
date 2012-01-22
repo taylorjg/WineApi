@@ -1,0 +1,22 @@
+{
+	"Status" : {
+		"Messages" : [],
+		"ReturnCode" : 0
+	},
+	"Blog" : [],
+	"Books" : [{
+			"Id" : "5",
+			"Title" : "Varietal",
+			"Articles" : [{
+					"Id" : "138",
+					"Title" : "Merlot",
+					"Abstract" : " Merlot\u000d(mehr-LOW) \u000d\u000dRelated Links:\u000d Shop our most popular Merlots\u000d Shop our highest rated Merlots \u000d No second fiddle\u000d Poor Merlot, Miles gave it quite a reputation in Sideways. Luckily, Merlot did...",
+					"Content" : " Merlot\u000d(mehr-LOW) \u000d\u000dRelated Links:\u000d Shop our most popular Merlots\u000d Shop our highest rated Merlots \u000d No second fiddle\u000d Poor Merlot, Miles gave it quite a reputation in Sideways. Luckily, Merlot did not take it personally and continues to rule the right bank of Bordeaux and produce quality, well-made wines elsewhere in the world. The grape's unfortunate fall into disgrace came from a few wineries who over-planted the variety and made inexpensive, watered-down Merlot. But the principle grape of top chateaux in St-Émilion and Pomerol (think Petrus) maintains its noble variety standing. \u000d\u000dNotable Facts\u000d Merlot is important as a single varietal and as a blending agent. It's known for adding softness to the austere Cabernet Sauvignon in Bordeaux blends in France, California and elsewhere. Chateau Petrus, perhaps one of the most expensive and sought-after wines of the world, is almost 100% Merlot. The grape exudes soft fruit flavors of plum and blackberry, but it's versatile - the style can change depending on the climate and soil. Merlot from mountain areas are usually more Cabernet like, with stronger structure and tannins, while Merlot from flatter areas of clay based soil are opulent, velvelty wines ready to drink earlier on. \u000d\u000dSumming it up\u000d Successful Sites:\u000dBordeaux, California, Washington State, Chile \u000d\u000dCommon Descriptors:\u000d plum, cherry, blackberry, spice, raspberry\u000d\u000d",
+					"Url" : "http:\/\/www.wine.com\/v6\/Merlot\/Red-Wines\/learnabout.aspx?class=1&varietal=2",
+					"Footnotes" : []
+				}
+			]
+		}
+	],
+	"Vineyards" : []
+}

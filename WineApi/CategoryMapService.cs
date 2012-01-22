@@ -62,13 +62,14 @@ namespace WineApi
         }
 
         /// <summary>
-        /// Lists all items in the given category.
+        /// Lists all items in the given categories.
         /// </summary>
-        /// <param name="id">The category to be listed.</param>
+        /// <param name="ids">The categories to be returned.</param>
         /// <returns>this</returns>
-        public CategoryMapService Show(int id)
+        public CategoryMapService Show(params int[] ids)
         {
-            AppendNameValueToQueryString("show", id.ToString());
+            string categories = string.Join("+", ids);
+            AppendNameValueToQueryString("show", string.Format("({0})", categories));
             return this;
         }
 

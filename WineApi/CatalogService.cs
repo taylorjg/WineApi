@@ -91,7 +91,7 @@ namespace WineApi
         /// <returns>this</returns>
         public CatalogService PriceFilter(decimal from)
         {
-            AppendNameValueToQueryString("filter", string.Format("price({0})", from));
+            AppendNameValueToQueryString("filter", string.Format("price({0:F4})", from));
             return this;
         }
 
@@ -104,7 +104,7 @@ namespace WineApi
         /// <returns>this</returns>
         public CatalogService PriceFilter(decimal from, decimal to)
         {
-            AppendNameValueToQueryString("filter", string.Format("price({0}|{1})", from, to));
+            AppendNameValueToQueryString("filter", string.Format("price({0:F4}|{1:F4})", from, to));
             return this;
         }
 

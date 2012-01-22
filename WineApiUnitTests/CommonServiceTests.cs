@@ -3,10 +3,10 @@ using WineApi;
 using NUnit.Framework;
 using Rhino.Mocks;
 
-namespace WineApiTests
+namespace WineApiUnitTests
 {
     [TestFixture]
-    internal class GeneralServiceTests
+    internal class CommonServiceTests
     {
         [SetUp]
         public void SetUp()
@@ -15,7 +15,7 @@ namespace WineApiTests
         }
 
         [Test]
-        public void Execute_ResponseHasStatusWithReturnCode200And2Messages_ThrowsException()
+        public void Execute_StatusWithReturnCode200And2Messages_ThrowsException()
         {
             var stubUrlInvoker = MockRepository.GenerateStub<IUrlInvoker>();
 
@@ -40,7 +40,7 @@ namespace WineApiTests
         }
 
         [Test]
-        public void Execute_ResponseHasUnknownReturnCode_ThrowsException()
+        public void Execute_StatusWithUnknownReturnCode_ThrowsException()
         {
             var stubUrlInvoker = MockRepository.GenerateStub<IUrlInvoker>();
 
@@ -63,7 +63,7 @@ namespace WineApiTests
         }
 
         [Test]
-        public void Execute_ResponseHasBadJson_ThrowsException()
+        public void Execute_BadJson_ThrowsException()
         {
             var stubUrlInvoker = MockRepository.GenerateStub<IUrlInvoker>();
 

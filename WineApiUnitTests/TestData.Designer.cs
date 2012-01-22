@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WineApiTests {
+namespace WineApiUnitTests {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace WineApiTests {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WineApiTests.TestData", typeof(TestData).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WineApiUnitTests.TestData", typeof(TestData).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -94,6 +94,54 @@ namespace WineApiTests {
         internal static string BadJson {
             get {
                 return ResourceManager.GetString("BadJson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///	&quot;Status&quot; : {
+        ///		&quot;Messages&quot; : [],
+        ///		&quot;ReturnCode&quot; : 0
+        ///	},
+        ///	&quot;Products&quot; : {
+        ///		&quot;List&quot; : [{
+        ///				&quot;Id&quot; : 108074,
+        ///				&quot;Name&quot; : &quot;Duckhorn Napa Merlot 2008&quot;,
+        ///				&quot;Url&quot; : &quot;http:\/\/www.wine.com\/V6\/Duckhorn-Napa-Merlot-2008\/wine\/108074\/detail.aspx&quot;,
+        ///				&quot;Appellation&quot; : {
+        ///					&quot;Id&quot; : 2398,
+        ///					&quot;Name&quot; : &quot;Napa Valley&quot;,
+        ///					&quot;Url&quot; : &quot;http:\/\/www.wine.com\/v6\/Napa-Valley\/wine\/list.aspx?N=7155+101+2398&quot;,
+        ///					&quot;Region&quot; : {
+        ///						&quot;Id&quot; : 101,
+        ///						&quot;Name&quot; : &quot;California&quot;,
+        ///						&quot;Url&quot; : &quot;http:\/\/www.w [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string MerlotNapaValleyProducts {
+            get {
+                return ResourceManager.GetString("MerlotNapaValleyProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///	&quot;Status&quot; : {
+        ///		&quot;Messages&quot; : [],
+        ///		&quot;ReturnCode&quot; : 0
+        ///	},
+        ///	&quot;Blog&quot; : [],
+        ///	&quot;Books&quot; : [{
+        ///			&quot;Id&quot; : &quot;5&quot;,
+        ///			&quot;Title&quot; : &quot;Varietal&quot;,
+        ///			&quot;Articles&quot; : [{
+        ///					&quot;Id&quot; : &quot;138&quot;,
+        ///					&quot;Title&quot; : &quot;Merlot&quot;,
+        ///					&quot;Abstract&quot; : &quot; Merlot\u000d(mehr-LOW) \u000d\u000dRelated Links:\u000d Shop our most popular Merlots\u000d Shop our highest rated Merlots \u000d No second fiddle\u000d Poor Merlot, Miles gave it quite a reputation in Sideways. Luckily, Merlot did...&quot;,
+        ///					&quot;Content&quot; : &quot; Merlot\u000d(mehr-LOW) \u000d\u000 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string MerlotReferences {
+            get {
+                return ResourceManager.GetString("MerlotReferences", resourceCulture);
             }
         }
         

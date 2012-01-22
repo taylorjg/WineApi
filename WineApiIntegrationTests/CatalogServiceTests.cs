@@ -2,10 +2,10 @@
 using WineApi;
 using NUnit.Framework;
 
-namespace WineApiTests
+namespace WineApiIntegrationTests
 {
     [TestFixture]
-    internal class CatalogServiceIntegrationTests
+    internal class CatalogServiceTests
     {
         [TestFixtureSetUp]
         public void TestFixtureSetUp()

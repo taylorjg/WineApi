@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A73C6A4C-E61B-46D4-BF96-C910CC75800B}</ProjectGuid>
+    <ProjectGuid>{8403BCB9-23A5-4C21-A657-CBD6C03A74C2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WineApiTests</RootNamespace>
-    <AssemblyName>WineApiTests</AssemblyName>
+    <RootNamespace>WineApiUnitTests</RootNamespace>
+    <AssemblyName>WineApiUnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -52,9 +52,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CatalogServiceTests.cs" />
     <Compile Include="CategoryMapServiceTests.cs" />
-    <Compile Include="GeneralServiceIntegrationTests.cs" />
-    <Compile Include="GeneralServiceTests.cs" />
+    <Compile Include="CommonServiceTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReferenceServiceTests.cs" />
     <Compile Include="TestData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -62,17 +64,9 @@
     </Compile>
     <Compile Include="Utils.cs" />
     <Compile Include="WineApiTestsConstants.cs" />
-    <Compile Include="CatalogServiceIntegrationTests.cs" />
-    <Compile Include="CategoryMapServiceIntegrationTests.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReferenceServiceIntegrationTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TestData\StatusWithUnknownReturnCode.txt" />
-    <Content Include="TestData\BadJson.txt" />
     <None Include="packages.config" />
-    <Content Include="TestData\StatusWithReturnCode200And2Messages.txt" />
-    <Content Include="TestData\WineTypes.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WineApi\WineApi.csproj">
@@ -85,6 +79,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>TestData.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TestData\BadJson.txt" />
+    <Content Include="TestData\MerlotNapaValleyProducts.txt" />
+    <Content Include="TestData\MerlotReferences.txt" />
+    <Content Include="TestData\StatusWithReturnCode200And2Messages.txt" />
+    <Content Include="TestData\StatusWithUnknownReturnCode.txt" />
+    <Content Include="TestData\WineTypes.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

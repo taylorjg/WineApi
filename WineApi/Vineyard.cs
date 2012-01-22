@@ -18,14 +18,19 @@ namespace WineApi
         public string Name { get; set; }
 
         /// <summary>
+        /// The url to the description of the vineyard.
+        /// </summary>
+        public string Url { get; set; }
+
+        /// <summary>
+        /// The url to an image of the vineyard.
+        /// </summary>
+        public string ImageUrl { get; set; }
+
+        /// <summary>
         /// The location of the vineyard.
         /// Only available with "partner" access.
         /// </summary>
         public GeoLocation GeoLocation { get; set; }
-
-        /// <summary>
-        /// The url to the description of the vineyard.
-        /// </summary>
-        public string Url { get; set; }
     }
 }

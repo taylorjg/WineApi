@@ -2,10 +2,10 @@
 using WineApi;
 using NUnit.Framework;
 
-namespace WineApiTests
+namespace WineApiIntegrationTests
 {
     [TestFixture]
-    internal class GeneralServiceIntegrationTests
+    internal class CommonServiceTests
     {
         [Test]
         public void Execute_WithoutSettingApiKey_ThrowsException()

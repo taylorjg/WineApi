@@ -28,5 +28,10 @@ namespace WineApi
         /// The url for purchasing this product.
         /// </summary>
         public string Url { get; set; }
+
+        /// <summary>
+        /// The desired ship to state.
+        /// </summary>
+        public string State { get; set; }
     }
 }

@@ -22,5 +22,10 @@ namespace WineApi
         /// A url to other products that have the same attribute.
         /// </summary>
         public string Url { get; set; }
+
+        /// <summary>
+        /// The url to an icon for the product attribute.
+        /// </summary>
+        public string ImageUrl { get; set; }
     }
 }
