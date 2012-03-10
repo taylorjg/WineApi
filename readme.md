@@ -4,6 +4,52 @@ This project started off by looking at the OData service provided by wine.com (s
 However, I then switched to the RESTful API. I have created a C# class library called WineApi that implements the
 entire object model. I have also started work on a demo WPF client application using MVVM.
 
+## NuGet
+
+WineApi is available as NuGet package - see http://nuget.org/packages/WineApi. It has a dependency on [Newtonsoft.Json](http://nuget.org/packages/Newtonsoft.Json) which is
+a strongly named assembly. The current WineApi NuGet package was built against 4.0.5 of Newtonsoft.Json. However, 4.0.5 has been superceded (4.0.8 as of March 10th 2012).
+This causes a problem at run time:
+
+```
+Could not load file or assembly
+'Newtonsoft.Json, Version=4.0.5.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed'
+or one of its dependencies.
+The located assembly's manifest definition does not match the assembly reference.
+```
+
+This can be fixed by running Add-BindingRedirect in the Package Manager Console:
+
+```
+PM> add-bindingredirect
+
+Name                                     OldVersion                                                            NewVersion                                                          
+----                                     ----------                                                            ----------                                                          
+Newtonsoft.Json                          0.0.0.0-4.0.8.0                                                       4.0.8.0                                                             
+
+```
+
+Note that when I first tried this, it did nothing. I then upgraded my NuGet version from 1.2.blah to 1.6.21215.9133
+by uninstalling and re-installing it. After upgrading NuGet, running Add-BindingRedirect worked fine - it added
+a bindingRedirect to my app.config:
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.8.0" newVersion="4.0.8.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+</configuration>
+```
+
+See the following post for further information:
+
+- http://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html 
+
 ## Simple C# Client Example
 
 ```C#
