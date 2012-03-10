@@ -6,7 +6,7 @@ entire object model. I have also started work on a demo WPF client application u
 
 ## NuGet
 
-WineApi is available as NuGet package - see http://nuget.org/packages/WineApi. It has a dependency on [Newtonsoft.Json](http://nuget.org/packages/Newtonsoft.Json) which is
+WineApi is available as a NuGet package - see http://nuget.org/packages/WineApi. It has a dependency on [Newtonsoft.Json](http://nuget.org/packages/Newtonsoft.Json) which is
 a strongly named assembly. The current WineApi NuGet package was built against 4.0.5 of Newtonsoft.Json. However, 4.0.5 has been superceded (4.0.8 as of March 10th 2012).
 This causes a problem at run time:
 
