@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/ypqfqdfrnut3fk9h/branch/master?svg=true)](https://ci.appveyor.com/project/taylorjg/wineapi/branch/master)
+
 # WineApi
 
 This project started off by looking at the OData service provided by wine.com (see the WineApiConsoleApp project).
